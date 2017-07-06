@@ -6,51 +6,170 @@
             #header{
                 font-size: 100px;
                 border: 6px solid blue;
+                text-align: center;
                 }
             #picture{height: 300px;
-            width:300px;
+                width:300px;
                 border:4px solid blue;
+                top: 0%;
+                left: 0%;
+                position: absolute;
             }
-            p{color:darkblue}
-            ol{color: darkblue}
+            p{color:black}
+            ol{color: black}
             #picture2{height: 300px;
             width:300px;
             border:4px solid blue;
             }
-            #picture3{height: 200px;
-            width:200px;
-            border:4px solid blue;
+            a:hover {
+                
+                color: deepskyblue;
+                font-variant: small-caps;
+                font-size: 20px;
+                background-color: darkslateblue;
             }
-            .underlinedText{text-decoration-line: underline}
+            h3{ color: blue;
+                font-size: 25px;
+                
+            }
+            
+            
+            .underlinedText{
+                text-decoration-line: underline;
+            
+            }
             
                
             #divImages{
+                position:relative;
                 text-align: center;
+                background-color:dimgray;
+                height: 300px;
+                width: 100%;
+                animation: changeBg2 2s infinite;
             }
             h1{background-color:lightslategrey}
+             
+            @keyframes changeBg {
+                0%{
+                    background-color:cadetblue;
+                }
+                50%{
+                    background-color:grey
+                }
+                100%{
+                    
+                    
+                background-color:cadetblue ;
+                }
+           
+            }
+            body{
+                animation: changeBg 1s infinite;
+            }
+            
+            
+             .picture{
+                 height: 300px;
+                width:300px;
+                border:4px solid blue;
+                top: 0%;
+                left: 0%;
+               animation: Images1 1s infinite; 
+                position: absolute; 
+            }
+            @keyframes Images1 {
+                 0%{
+                        left:0%;
+                    } 
+                    50%{
+                        left:calc(50% - 300px);
+                    }  
+                    100%{
+                        left:0%;
+                
+                    }
+            }
+            @keyframes Images2 {
+                 0%{
+                        left:calc(100% - 300px);
+                    } 
+                    50%{
+                        left:50%;
+                    }  
+                    100%{
+                        left:calc(100% - 300px);
+                
+                    }
+            }
+            .picture2{
+                height: 300px;
+            width:300px;
+            border:4px solid blue;
+            animation: Images2 1s infinite;
+                position: absolute;
+            }
+            
+            @keyframes changeBg2 {
+                0%{
+                    background-color: royalblue;
+                }
+                50%{
+                    background-color: gray;
+                }
+                100%{ 
+                background-color:royalblue;
+                }
+           
+            }
+            .container{
+                display: flex;
+            }
+            .rightChild {
+                flex: 1;
+                text-align: center;
+            }
+            .leftChild {
+                flex: 2;
+            }
+            .robotImg {
+                height: 300px;
+            }
+            .moving {
+            animation: Images2 1s infinite;
+            animation: Images1 1s infinite; 
+
+            }
         </style>
     </head>
     <body bgcolor="grey"><h1 id="header"> world of robots
         </h1>
         <div id="divImages">
-            <img id="picture"src ="https://tctechcrunch2011.files.wordpress.com/2017/03/nao-lead.jpg?w=1279&h=727&crop=1"/>
-            <img id="picture2"src="http://mareeg.com/wp-content/uploads/2017/03/robots-678x381.jpg"/>
+            <img class="picture"src ="https://tctechcrunch2011.files.wordpress.com/2017/03/nao-lead.jpg?w=1279&h=727&crop=1"/>
+            <img class="picture2"src="http://mareeg.com/wp-content/uploads/2017/03/robots-678x381.jpg"/>
         </div>
         
         
             <h3 class="underlinedText">what is the Robots?
             </h3>
 
-        
-        <p>A robot is a machine designed to execute one or more tasks automatically with speed and precision. There are as many different types of robots as there are tasks for them to perform.
+        <div class="container">
+            <div class="leftChild">
+                <p>A robot is a machine designed to execute one or more tasks automatically with speed and precision. There are as many different types of robots as there are tasks for them to perform.
             Robots that resemble humans are known as androids; however, many robots aren't built on the human model. Industrial robots, for example, are often designed to perform repetitive tasks that aren't facilitated by a human-like construction. A robot can be remotely controlled by a human operator, sometimes from a great distance. A telechir is a complex robot that is remotely controlled by a human operator for a telepresence system, which gives that individual the sense of being on location in a remote, dangerous or alien environment and the ability to interact with it. Telepresence robots, which simulate the experience and some of the capabilities of being physically present, can enable remote business consultations, healthcare, home monitoring and childcare, among many other possibilities.
 
 An autonomous robot acts as a stand-alone system, complete with its own computer (called the controller). The most advanced example is the smart robot, which has a built-in artificial intelligence (AI) system that can learn from its environment and its experience and build on its capabilities based on that knowledge.
  </p>
+            </div>
+            <div class="rightChild">
+                <img id="robortId" class="robotImg" src="https://s-media-cache-ak0.pinimg.com/originals/d9/b3/45/d9b345544bd6aabd17b6da9247b05117.png"/>
+            </div>
+        </div>
+        
     
         <h3 class="underlinedText">what the type of robots ?</h3>
         <ol>
-            <li>/>Industrial robots - Industrial robots are robots used in an industrial manufacturing environment. Usually these are articulated arms specifically developed for such applications as welding, material handling, painting and others. If we judge purely by application this type could also include some automated guided vehicles and other robots.
+            <li>Industrial robots - Industrial robots are robots used in an industrial manufacturing environment. Usually these are articulated arms specifically developed for such applications as welding, material handling, painting and others. If we judge purely by application this type could also include some automated guided vehicles and other robots.
                 
             </li>
             <li>Medical robots - Robots used in medicine and medical institutions. First and foremost - surgery robots. Also, some automated guided vehicles and maybe lifting aides. 
@@ -61,6 +180,22 @@ An autonomous robot acts as a stand-alone system, complete with its own computer
             </li><a href ="http://www.allonrobots.com/types-of-robots.html"> to know more about its type:</a>
         
         </ol>
+        
+        <script type="text/javascript">
+            var box = document.getElementById('robortId');
+            
+            function func() {
+                if(box.className==='moving')
+            
+            else{
+                
+            }
+                
+            }
+            box.onclick = 'func'
+            
+            
+        </script>
         
         
     </body>
